@@ -38,12 +38,12 @@ public class PlayerCode : MonoBehaviour
         RB.velocity = vel;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        FightingEnemy enemy = other.gameObject.GetComponent<CrateScript>();
-        if (enemy != null)
-        {
-            BeatEnemy();
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+        //EnemyCode enemy = other.gameObject.GetComponent<EnemyCode>();
+       // if (enemy != null)
+       // {
+            //BeatEnemy();
+       // }
+    //}
 }
