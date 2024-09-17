@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCode : MonoBehaviour
 {
     public GameObject Player;
-    public int speed = 5;
+    public int speed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -16,18 +16,11 @@ public class EnemyCode : MonoBehaviour
     // Update is called once per frame
 	void Update () 
 	{
-		// face the target
-		//transform.LookAt(Player);
-
-		//get the distance between the chaser and the target
-		float distance = Vector3.Distance(transform.position,Player.transform.position);
-
-		//move towards it at rate speed.
-		transform.position += transform.forward * speed * Time.deltaTime;	
+	    transform.position = Vector3.MoveTowards(transform.position,Player.transform.position,1*Time.deltaTime);
 	}
 
     public void BeatEnemy()
     {
-        Destroy(GameMasterCode.Singleton.EnemyPrefab);
+        DestroyImmediate(GameMasterCode.Singleton.EnemyPrefab,true);
     }
 }
