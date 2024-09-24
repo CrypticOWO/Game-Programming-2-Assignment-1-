@@ -43,7 +43,7 @@ public class PlayerCode : MonoBehaviour
        EnemyCode Enemy = other.gameObject.GetComponent<EnemyCode>();
        if (Enemy != null)
        {
-            Enemy.BeatEnemy();
+            //Destroy(gameObject);
        }
     }
 }

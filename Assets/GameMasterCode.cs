@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMasterCode : MonoBehaviour
 {
     public static GameMasterCode Singleton;
     public static int score = 0;
+    public TextMeshPro Text;
     public GameObject EnemyPrefab;
     //public GameObject ItemPrefab;
     public float EnemyTimer = 0;
@@ -20,6 +22,8 @@ public class GameMasterCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text.text = "Score: "+score;
+
         EnemyTimer -= Time.deltaTime;
         //ItemTimer -= Time.deltaTime;
 
@@ -28,7 +32,7 @@ public class GameMasterCode : MonoBehaviour
             //Vector3 where = new Vector3(Random.Range(-45f, 45f), Random.Range(-45f, 45f), 0);
             Vector3 where = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0);
             Instantiate(EnemyPrefab, where, Quaternion.identity);
-            EnemyTimer = 1;
+            EnemyTimer = 0.5f;
         }
         //if (ItemTimer <= 0)
         {

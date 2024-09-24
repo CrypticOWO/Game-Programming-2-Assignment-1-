@@ -18,7 +18,7 @@ public class PistolCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //follow mouse movement
+        //follow player movement
         transform.position = Player.transform.position + new Vector3(0,0,-5);
 
         //rotate to mouse movement
@@ -35,19 +35,14 @@ public class PistolCode : MonoBehaviour
     //Function to make the ship shoot
     void Shoot()
     {
-        //Establish Bullet Pathfinding
-        Vector2 mousePos;       //create a vector called mousePos
-        mousePos = Input.mousePosition;         //change the value of mousePos
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);           //change the value of mousePos
-        Vector2 direction = mousePos - (Vector2)transform.position;
-        direction.Normalize();
-
         //Make the bullet
         Transform bullet = Instantiate(this.bodyPrefab);
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float angle = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x) * Mathf.Rad2Deg;
         bullet.transform.rotation = Quaternion.Euler(0,0,angle);
-        bullet.position = new Vector2(transform.position.x, transform.position.y);
+        float offsetDistance = 0.75f;
+        Vector3 bulletPosition = transform.position + transform.right * offsetDistance;
+        bullet.position = new Vector2(bulletPosition.x, bulletPosition.y);
         bullets.Add(bullet);
     }
 }
