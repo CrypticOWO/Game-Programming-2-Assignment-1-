@@ -6,6 +6,7 @@ public class EnemyCode : MonoBehaviour
 {
     public GameObject Player;
     public float speed = 2.5f;
+    public GameObject PartGnome;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class EnemyCode : MonoBehaviour
 
     public void BeatEnemy()
     {
+        Instantiate(PartGnome, transform.position, transform.rotation);
         Destroy(gameObject);
         GameMasterCode.score++;
     }

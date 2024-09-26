@@ -18,6 +18,9 @@ public class PistolBulletCode : MonoBehaviour
     void Update()
     {
         transform.position += (Vector3)direction*speed*Time.deltaTime;
+
+        if (transform.position.x >= 50 || transform.position.x <= -50 || transform.position.y >= 50 || transform.position.y <= -50)
+            Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
