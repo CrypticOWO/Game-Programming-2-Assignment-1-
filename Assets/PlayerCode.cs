@@ -7,6 +7,8 @@ public class PlayerCode : MonoBehaviour
 {
     public Rigidbody2D RB;
 
+    [SerializeField] private AudioClip DeathSoundClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,8 @@ public class PlayerCode : MonoBehaviour
        EnemyCode Enemy = other.gameObject.GetComponent<EnemyCode>();
        if (Enemy != null)
        {
-            //Destroy(gameObject);
+            //Death Sound
+            GameMasterCode.Singleton.PlaySoundFXClip(DeathSoundClip, transform, 1f);
        }
     }
 }
