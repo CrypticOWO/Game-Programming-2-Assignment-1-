@@ -7,7 +7,7 @@ public class EnemyCode : MonoBehaviour
     public GameObject Player;
     public float speed = 2.5f;
 
-    [SerializeField] private ParticleSystem EnemyDeathEffect;
+    public GameObject EnemyDeathEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +24,12 @@ public class EnemyCode : MonoBehaviour
 
     public void BeatEnemy()
     {
-        //Instantiate(PartGnome, transform.position, transform.rotation);
-        GameMasterCode.Singleton.EmitParticle(EnemyDeathEffect, transform);
+        // Spawn GameObject
+        Instantiate(EnemyDeathEffect, transform.position, transform.rotation);
+
+        // Destroy after the effect
         Destroy(gameObject);
+
         GameMasterCode.score++;
     }
 

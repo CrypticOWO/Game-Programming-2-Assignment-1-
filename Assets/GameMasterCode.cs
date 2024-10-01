@@ -13,7 +13,6 @@ public class GameMasterCode : MonoBehaviour
     public float EnemyTimer = 0;
     //public float ItemTimer = 30;
 
-    [SerializeField] private ParticleSystem particleFXObject;
     [SerializeField] private AudioSource soundFXObject;
 
     // Start is called before the first frame update
@@ -65,23 +64,4 @@ public class GameMasterCode : MonoBehaviour
         //Destroy
         Destroy(audioSource.gameObject, clipLength);
     }
-
-    public void EmitParticle(ParticleSystem particleEffect, Transform spawnTransform)
-    {
-        // Spawn GameObject
-        ParticleSystem particleSource = Instantiate(particleFXObject, spawnTransform.position, Quaternion.identity);
-
-        //Assign Particle Effect
-        particleSource.main = particleEffect;
-        
-        // Assign Particle Effect
-        particleSource.Play();
-
-        // Length of Particle Effect
-        float particleLength = particleSource.main.duration;
-
-        // Destroy after the effect
-        Destroy(particleSource.gameObject, particleLength);
-    }
-
 }

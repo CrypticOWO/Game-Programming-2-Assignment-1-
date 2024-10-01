@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class ParticleCode : MonoBehaviour
 {
-    public float Timer = 0.6f;
-    public ParticleSystem PS;
+    public ParticleSystem Effect;
+    private float particleLength = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        PS.Emit(1);
+        Effect.Play();    
+        particleLength = Effect.main.duration;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timer -= Time.deltaTime;
-        if (Timer <= 0)
-        {
-            Destroy(gameObject);
-        }
+        // Destroy after the effect
+        Destroy(Effect.gameObject, particleLength);
     }
 }
