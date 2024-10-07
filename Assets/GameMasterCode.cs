@@ -33,7 +33,7 @@ public class GameMasterCode : MonoBehaviour
         {
             //Vector3 where = new Vector3(Random.Range(-45f, 45f), Random.Range(-45f, 45f), 0);
             Vector3 where = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0);
-            Instantiate(EnemyPrefab, where, Quaternion.identity);
+            //Instantiate(EnemyPrefab, where, Quaternion.identity);
             EnemyTimer = 0.5f;
         }
         //if (ItemTimer <= 0)
@@ -44,13 +44,17 @@ public class GameMasterCode : MonoBehaviour
         }
     }
 
-    public void PlaySoundFXClip(AudioClip audioClip, Transform spawnTransform, float volume)
+    public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawnTransform, float volume)
     {
+
+        //Assign Index
+        int rand = Random.Range(0, audioClip.Length);
+
         //Spawn Gameobject
         AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
 
         //Assign Audio Clip
-        audioSource.clip = audioClip;
+        audioSource.clip = audioClip[rand];
 
         //Assign Volume
         audioSource.volume = volume;  

@@ -164,3 +164,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   speed: 5
   EnemyDeathEffect: {fileID: 5923949739883178609, guid: 9a893c6de381cee47bdf0b4598ce18c6, type: 3}
+  EnemyDeathSoundClips:
+  - {fileID: 8300000, guid: 31b2acebc75f3d342a0e0255864f56b7, type: 3}
+  - {fileID: 8300000, guid: d6c728ba34f13304191b9869bf5f6656, type: 3}
+  - {fileID: 8300000, guid: d05a18e1c45779848afb07fb8179e667, type: 3}

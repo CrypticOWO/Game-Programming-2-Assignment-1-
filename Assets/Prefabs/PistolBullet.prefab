@@ -99,6 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  BulletTrailEffect: {fileID: 1566102495712129574, guid: 23bee75bc164444438cace5d3e80eff7, type: 3}
+  BulletFiredSoundClips:
+  - {fileID: 8300000, guid: 6e84067b7cae33d4eaff42150b2d2dd5, type: 3}
+  - {fileID: 8300000, guid: e00a82c212715284aaea0e99f6428012, type: 3}
+  - {fileID: 8300000, guid: 0ccb49dc17944f9498347258e5ccb660, type: 3}
+  - {fileID: 8300000, guid: ab09ebc560fa9c9439638b3f15c43542, type: 3}
+  - {fileID: 8300000, guid: ecca7a00c5ce7a243a7bd3fd58d4a354, type: 3}
 --- !u!61 &4520497117929199404
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class EnemyCode : MonoBehaviour
     public float speed = 2.5f;
 
     public GameObject EnemyDeathEffect;
+    [SerializeField] private AudioClip[] EnemyDeathSoundClips;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,11 @@ public class EnemyCode : MonoBehaviour
 
     public void BeatEnemy()
     {
-        // Spawn GameObject
+        //Play Sound + Spawn Paritcle System
+        GameMasterCode.Singleton.PlayRandomSoundFXClip(EnemyDeathSoundClips, transform, 1f);
         Instantiate(EnemyDeathEffect, transform.position, transform.rotation);
 
-        // Destroy after the effect
+        //Destroy after the effect
         Destroy(gameObject);
 
         GameMasterCode.score++;

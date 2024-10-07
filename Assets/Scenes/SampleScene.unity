@@ -501,7 +501,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 659630101}
   PlayerDeathEffect: {fileID: 5923949739883178609, guid: ccc47804e2b1c8f4484c3139e5f0b0c2, type: 3}
-  DeathSoundClip: {fileID: 8300000, guid: c912e6ddb92fe5d478fd9493446ef987, type: 3}
+  DeathSoundClip:
+  - {fileID: 8300000, guid: c912e6ddb92fe5d478fd9493446ef987, type: 3}
 --- !u!1 &1232216814
 GameObject:
   m_ObjectHideFlags: 0
