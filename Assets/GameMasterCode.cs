@@ -31,7 +31,7 @@ public class GameMasterCode : MonoBehaviour
 
         if (EnemyTimer <= 0)
         {
-            Vector3 where = new Vector3(Random.Range(-45f, 45f), Random.Range(-45f, 45f), 0);
+            Vector3 where = new Vector3(Random.Range(-18f, 18f), Random.Range(-18f, 18f), 0);
             Instantiate(EnemyPrefab, where, Quaternion.identity);
             EnemyTimer = 0.25f;
         }
