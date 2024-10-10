@@ -12,6 +12,8 @@ public class GameMasterCode : MonoBehaviour
     //public GameObject ItemPrefab;
     public float EnemyTimer = 0;
     //public float ItemTimer = 30;
+    private int EnemyScale = 0;
+    public static float EnemySpeed = 2;
 
     [SerializeField] private AudioSource soundFXObject;
 
@@ -33,7 +35,14 @@ public class GameMasterCode : MonoBehaviour
         {
             Vector3 where = new Vector3(Random.Range(-18f, 18f), Random.Range(-18f, 18f), 0);
             Instantiate(EnemyPrefab, where, Quaternion.identity);
-            EnemyTimer = 0.25f;
+            EnemyTimer = 0.5f;
+            EnemyScale++;
+
+        }
+        if (EnemyScale >= 10)
+        {
+            EnemySpeed = EnemySpeed + 0.1f;
+            EnemyScale = 0;
         }
         //if (ItemTimer <= 0)
         {

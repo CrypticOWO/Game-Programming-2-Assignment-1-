@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCode : MonoBehaviour
 {
     public GameObject Player;
-    public float speed = 2.5f;
+    public float speed = 0;
 
     public GameObject EnemyDeathEffect;
     [SerializeField] private AudioClip[] EnemyDeathSoundClips;
@@ -14,13 +14,13 @@ public class EnemyCode : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        speed = 2.5f;
     }
 
     // Update is called once per frame
 	void Update () 
 	{
-	    transform.position = Vector3.MoveTowards(transform.position,Player.transform.position,speed*Time.deltaTime);
+        speed = GameMasterCode.EnemySpeed;
+        transform.position = Vector3.MoveTowards(transform.position,Player.transform.position,speed*Time.deltaTime);
 	}
 
     public void BeatEnemy()
